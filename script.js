@@ -3,7 +3,7 @@
 $("#submitBtn").on("click", function() {
 
 
-var category = "Misc"
+var category = "Misc,Misc"
 var queryURL = "https://v2.jokeapi.dev/joke/" + category + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
 
 $.ajax({
