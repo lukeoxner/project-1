@@ -3,45 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turn that Frown Around</title>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Changa+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <title>Turn that Frown Around</title>
 </head>
 <body>
+
     <div class="background">
-        <div class="bar">
-            <row>
-                <img id="logo-l" src="Upside-Down_Face.png" alt"upside-down-smiley-emoji>
-                <div id="header">Turn that Frown Upside Down</div>
-                <img id="logo-r" src="Upside-Down_Face.png" alt"upside-down-smiley-emoji>
-            </row>
-        </div>
-        <div class="carousel"></div>
-        <div class="categories">
-            <button id="any"></button>
-            <button id="misc"></button>
-            <button id ="program"></button>
-            <button id="dark"></button>
-            <button id="pun"></button>
-            <button id="spooky"></button>
-            <button id="christmas"></button>
-        </div>
-        <div class="gif-result">
-            <h2>Your searched for: <span id="search-result"></span></h2>
-            <img>
-        </div>
-        <div class="joke-result">
-            <h2>Your joke</h2>
-            <span id="joke-result"></span>
-            <span id="punchline-result"></span>
-        </div>
-        <div class="return-home">
-            <h3>Do you want another joke?</h3>
-            <button id="home-button"></button>
-        </div>
-        <div class=""></div>
+  
+    <div class="bar">
+        <row>
+            <img id="logo-l" src="Upside-Down_Face.png" alt"upside-down-smiley-emoji>
+            <div id="header">Turn that Frown Upside Down</div>
+            <img id="logo-r" src="Upside-Down_Face.png" alt"upside-down-smiley-emoji>
+        </row>
     </div>
+  
+    <div class="ui card center" >
+        <div class="ui slide masked reveal image">
+          <img src="https://media2.giphy.com/media/o0vwzuFwCGAFO/200w.webp?cid=ecf05e472lfiagzhc59u4azp275cbc33bnv086jivv0ys4qk&rid=200w.webp" class="visible content" >
+          <img src="https://media2.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.webp?cid=ecf05e472lfiagzhc59u4azp275cbc33bnv086jivv0ys4qk&rid=giphy.webp" class="hidden content">
+        </div>
+    
+    </div>
+    <div class="categories">
+      <button class="ui button category">Any</button>
+      <button class="ui button category">Misc</button>
+      <button class="ui button category">Program</button>
+      <button class="ui button category">Dark</button>
+      <button class="ui button category">Pun</button>
+      <button class="ui button category">Spooky</button>
+      <button class="ui button category">Christmas</button>
+      <button class="ui button" id="submitBtn">Submit</button>
+
+    </div>
+    <div class="gif-result">
+        <h2>Your searched for: <span id="search-result"></span></h2>
+        <img id="gif-result">
+    </div>
+    <div class="joke-result">
+        <h2>Your joke</h2>
+        <span id="joke-result"></span>
+        <span id="punchline-result"></span>
+    </div>
+    <div class="return-home">
+        <h3>Do you want another joke?</h3>
+        <button id="home-button"></button>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
