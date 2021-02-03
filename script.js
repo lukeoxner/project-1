@@ -3,7 +3,7 @@
 $("#submitBtn").on("click", function() {
 
 
-var category = "Spooky"
+var category = "Misc"
 var queryURL = "https://v2.jokeapi.dev/joke/" + category + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
 
 $.ajax({
@@ -12,11 +12,29 @@ $.ajax({
 }).then(function(response) {
 	console.log(response);
 
-	//add if statement to determine if it is a two part joke or a one part
-
 	//make variables for items that will be needed
+	var jokeType = response.type
+	
+	var setup = response.setup
+	
+	var delivery = response.delivery
+	
+	var joke = response.joke
+
+	//add if statement to determine if it is a two part joke or a one part
+	if(jokeType === "twopart") {
+		console.log(setup);
+		console.log(delivery);
+	} else {
+		console.log(joke);
+	}
+
+	
+
 
 	//add functionality that displays data from response to matching DOM elements
+
+	
 
 	
 })
