@@ -32,10 +32,6 @@ $.ajax({
 		$("#joke-result").text(joke)
 	}
 
-	//add functionality that displays data from response to matching DOM elements
-
-	
-
 	
 })
 
