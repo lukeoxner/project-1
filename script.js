@@ -1,7 +1,7 @@
 
 // * IN PROGRESS
 // function giphyCarousel() {
-
+    
 //     // GIPHY API key (Luke's)
 //     var APIKey = "8eGmlbOaPfd5YDK197y9hhIn3Bj0M5A3";
 
