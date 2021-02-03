@@ -1,0 +1,33 @@
+body {
+  background: url(Upside-Down_Face.png) repeat;
+}
+
+.bar {
+  background-color: black;
+  height: 100px;
+  align-content: center;
+}
+/* 
+title {
+  text-align: center;
+  padding: 10px;
+  float: left;
+} */
+
+#header {
+  font-family: "Changa One", cursive;
+  font-size: xx-large;
+  color: rgb(243, 222, 64);
+  float: left;
+  padding-top: 30px;
+  padding-left: 20px;
+  display: inline;
+}
+
+#logo-l,
+#logo-r {
+  width: 50px;
+  float: left;
+  padding-top: 20px;
+  padding-left: 30px;
+}
