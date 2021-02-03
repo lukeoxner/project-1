@@ -29,9 +29,6 @@ $.ajax({
 		console.log(joke);
 	}
 
-	
-
-
 	//add functionality that displays data from response to matching DOM elements
 
 	
