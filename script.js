@@ -25,6 +25,8 @@ $.ajax({
 	
 	var joke = response.joke
 
+	console.log(jokeType);
+
 	//add if statement to determine if it is a two part joke or a one part
 	if(jokeType === "twopart") {
 		$("#joke-result").text(setup)
@@ -52,24 +54,43 @@ $(".category").on("click", function() {
 
 
 // * IN PROGRESS
-// function giphyCarousel() {
+function giphyCarousel() {
     
-//     // GIPHY API key (Luke's)
-//     var APIKey = "8eGmlbOaPfd5YDK197y9hhIn3Bj0M5A3";
+    // GIPHY API key (Luke's)
+    var APIKey = "8eGmlbOaPfd5YDK197y9hhIn3Bj0M5A3";
 
-//     // *** set this variable equal to random gifs
-//     var input = "car";
-//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=" + APIKey + "&limit=20";
+    // *** set this variable equal to random trending gifs
 
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function(response) {
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + APIKey + "&limit=20";
 
-//         // console.log(response);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
 
-//     })
-// }
+		console.log(response);
+
+		var x = Math.floor(Math.random() * 20);
+		var y = Math.floor(Math.random() * 20);
+		
+		checkSecondRandom();
+		
+		function checkSecondRandom() {
+			if (x === y) {
+				y = Math.floor(Math.random() * 20);
+				checkSecondRandom();
+			}
+		}
+
+		var firstRandom = response.data[x];
+		var secondRandom = response.data[y];
+
+        var firstGif = firstRandom.images.original.url;
+        var secondGif = secondRandom.images.original.url;
+	
+
+    })
+}
 
 
 function giphyJoke(){
@@ -94,13 +115,6 @@ function giphyJoke(){
 
         $("#gif-result").attr("src", jokeGif);
 
-
-
-
-
-
-
-
     })
 
 
@@ -110,6 +124,6 @@ function giphyJoke(){
 
 
 
-// giphyCarousel();
+giphyCarousel();
 
 giphyJoke();
