@@ -1,6 +1,7 @@
 
 
 var category = []
+var jokeID = []
 
 $("#submitBtn").on("click", function() {
 
@@ -28,14 +29,38 @@ $.ajax({
 	if(jokeType === "twopart") {
 		$("#joke-result").text(setup)
 		$("#punchline-result").text(delivery)
+		localStorage.setItem(response.id, JSON.stringify(setup + delivery))
+		jokeID.push(response.id)
 	} else {
 		$("#joke-result").text(joke)
+		localStorage.setItem(response.id, JSON.stringify(joke))
+		jokeID.push(response.id)
+	}
+	hideCategories()
+	getLocale()
+})
+
+})
+
+//functionality of local storage
+function getLocale() {
+	var values = []
+	var emptyString = ""
+	keys = Object.keys(localStorage),
+	i = keys.length;
+
+	while ( i-- ) {
+        values.push(localStorage.getItem(keys[i]));
 	}
 
-	
-})
+	for(var index = 0; index < values.length; index++) {
+		var oldJokeDiv = $("<div>")
+		oldJokeDiv.text(values[index])
+		$("#last-search").append(oldJokeDiv)
+	}
+}
 
-})
+
 
 //function that pushes user selection into array and removes it if they click on it again.
 $(".category").on("click", function() {
