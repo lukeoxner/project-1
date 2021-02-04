@@ -14,33 +14,38 @@ section {
   display: block;
 }
 
-.bar {
+nav {
   background-color: black;
   height: 100px;
 }
-/* 
-title {
-  text-align: center;
-  padding: 10px;
-  float: left;
-} */
 
-#header {
-  font-family: "Changa One", cursive;
-  font-size: xx-large;
-  color: rgb(243, 222, 64);
-  float: left;
-  padding-top: 30px;
-  padding-left: 20px;
+.bar {
+  display: block;
+  margin: auto;
+  float: none;
 }
 
-#logo-l,
-#logo-r {
+p {
+  font-family: "Changa One", cursive;
+  font-size: 60px;
+  color: rgb(253, 204, 67);
+  float: none;
+  display: inline;
+  padding-left: 120px;
+}
+
+#logo-l {
   width: 50px;
   float: left;
-  padding-top: 20px;
-  padding-left: 30px;
+  margin: 20px;
 }
+
+#logo-r {
+  width: 50px;
+  float: right;
+  margin: 20px;
+}
+
 #move {
   display: block;
   margin-left: auto;
