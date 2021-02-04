@@ -4,6 +4,7 @@ var category = []
 
 $("#submitBtn").on("click", function() {
 
+	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
 var formatCategory = category.join(",")
 console.log(formatCategory);
 
@@ -37,12 +38,18 @@ $.ajax({
 
 })
 
-//build a function that determines which catergories have been selected and put them into an array
-
+//function that pushes user selection into array and removes it if they click on it again.
 $(".category").on("click", function() {
-	category.push(this.textContent)
-	console.log(this.textContent);
+	var userCategory = this.textContent
+	if(category.includes(userCategory)) { 
+		var indexCat = category.indexOf(userCategory)
+		category.splice(indexCat, 1) 
+	} else {
+		category.push(this.textContent)
+	}
+	console.log(category);
 })
+
 
 // * IN PROGRESS
 // function giphyCarousel() {
