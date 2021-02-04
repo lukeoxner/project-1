@@ -4,6 +4,7 @@ var category = []
 
 $("#submitBtn").on("click", function() {
 
+	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
 var formatCategory = category.join(",")
 console.log(formatCategory);
 
@@ -37,7 +38,7 @@ $.ajax({
 
 })
 
-//function that pushes user selection into array
+//function that pushes user selection into array and removes it if they click on it again.
 $(".category").on("click", function() {
 	var userCategory = this.textContent
 	if(category.includes(userCategory)) { 
