@@ -4,10 +4,14 @@ body {
   background-color: rgb(252, 229, 129);
 }
 
-#content {
+section {
   margin: auto;
-  width: 90%;
+  width: 80%;
+  height: 100%;
   padding: 20px;
+  background-color: rgb(253, 240, 180);
+  border-color: rgb(97, 61, 19);
+  display: block;
 }
 
 .bar {
@@ -28,7 +32,6 @@ title {
   float: left;
   padding-top: 30px;
   padding-left: 20px;
-  display: inline;
 }
 
 #logo-l,
@@ -39,14 +42,22 @@ title {
   padding-left: 30px;
 }
 #move {
-  margin-left: 750px;
-  margin-top: 2%;
-  margin-bottom: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 40%;
 }
 #button {
-  margin-left: 500px;
+  margin-left: 25%;
 }
 #gifDesign {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+#last-search {
   margin-top: 2%;
   margin-left: 40%;
 }
