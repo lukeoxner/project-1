@@ -1,11 +1,18 @@
 body {
   background: url(Upside-Down_Face.png) repeat;
+  background-size: 150px 150px;
+  background-color: rgb(252, 229, 129);
+}
+
+#content {
+  margin: auto;
+  width: 90%;
+  padding: 20px;
 }
 
 .bar {
   background-color: black;
   height: 100px;
-  align-content: center;
 }
 /* 
 title {
