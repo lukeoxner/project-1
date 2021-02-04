@@ -19,6 +19,7 @@ $.ajax({
 	var setup = response.setup;
 	var delivery = response.delivery;
 	var joke = response.joke;
+	var catDiv = $("<div>")
 
 	//add if statement to determine if it is a two part joke or a one part
 	if(jokeType === "twopart") {
@@ -27,7 +28,12 @@ $.ajax({
 	} else {
 		$("#joke-result").text(joke);
 	}
+	
+	//puts the category array into a created div and displays it under searched for h2
+	catDiv.text(category)
+	$("#search-result").append(catDiv)
 
+	hideCategories()
 })
 
 })
@@ -42,6 +48,11 @@ $(".category").on("click", function() {
 		category.push(this.textContent);
 	}
 })
+
+//function that hides button categories
+function hideCategories() {
+	$(".categories").hide()
+}
 
 // * IN PROGRESS
 // function giphyCarousel() {
