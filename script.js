@@ -37,12 +37,18 @@ $.ajax({
 
 })
 
-//build a function that determines which catergories have been selected and put them into an array
-
+//function that pushes user selection into array
 $(".category").on("click", function() {
-	category.push(this.textContent)
-	console.log(this.textContent);
+	var userCategory = this.textContent
+	if(category.includes(userCategory)) { 
+		var indexCat = category.indexOf(userCategory)
+		category.splice(indexCat, 1) 
+	} else {
+		category.push(this.textContent)
+	}
+	console.log(category);
 })
+
 
 // * IN PROGRESS
 // function giphyCarousel() {
