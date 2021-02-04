@@ -37,6 +37,7 @@ $.ajax({
 		jokeID.push(response.id)
 	}
 	hideCategories()
+
 	getLocale()
 })
 
@@ -45,7 +46,7 @@ $.ajax({
 //functionality of local storage
 function getLocale() {
 	var values = []
-	var emptyString = ""
+	$("#last-search").empty()
 	keys = Object.keys(localStorage),
 	i = keys.length;
 
