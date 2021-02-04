@@ -16,12 +16,6 @@ $.ajax({
 	console.log(response);
 
 	//make variables for items that will be needed
-<<<<<<< HEAD
-	var jokeType = response.type
-	var setup = response.setup
-	var delivery = response.delivery
-	var joke = response.joke
-=======
 	var jokeType = response.type;
 	var setup = response.setup;
 	var delivery = response.delivery;
@@ -29,7 +23,6 @@ $.ajax({
 	var catDiv = $("<div>")
 	var category = response.category;
 	giphyJoke(category);
->>>>>>> main
 
 	//if statement to determine which type of joke it is
 	if(jokeType === "twopart") {
@@ -55,8 +48,6 @@ $(".category").on("click", function() {
 	}
 })
 
-<<<<<<< HEAD
-=======
 //home button is clicked, resets page and array so user can go through process again
 $("#home-button").on("click", function() {
 	$(".categories").show()
@@ -72,7 +63,6 @@ $("#home-button").on("click", function() {
 function hideCategories() {
 	$(".categories").hide()
 }
->>>>>>> main
 
 // declaring function giphyCarousel
 function giphyCarousel() {
