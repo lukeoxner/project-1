@@ -35,7 +35,6 @@ $.ajax({
 
 	hideCategories()
 })
-
 })
 
 //function that pushes user selection into array and removes it if they click on it again.
@@ -47,6 +46,16 @@ $(".category").on("click", function() {
 	} else {
 		category.push(this.textContent);
 	}
+})
+
+//home button is clicked, resets page and array so user can go through process again
+$("#home-button").on("click", function() {
+	$(".categories").show()
+	$("#search-result").empty()
+	$("#joke-result").empty()
+	$("#punchline-result").empty()
+	category.length = 0
+	console.log(category);
 })
 
 //function that hides button categories
