@@ -31,3 +31,23 @@ title {
   padding-top: 20px;
   padding-left: 30px;
 }
+#move {
+  margin-left: 750px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+#button {
+  margin-left: 500px;
+}
+#gifDesign {
+  margin-top: 2%;
+  margin-left: 40%;
+}
+.theJoke {
+  margin-left: 40%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.restart {
+  margin-left: 40%;
+}
