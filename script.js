@@ -16,10 +16,20 @@ $.ajax({
 	console.log(response);
 
 	//make variables for items that will be needed
+<<<<<<< HEAD
 	var jokeType = response.type
 	var setup = response.setup
 	var delivery = response.delivery
 	var joke = response.joke
+=======
+	var jokeType = response.type;
+	var setup = response.setup;
+	var delivery = response.delivery;
+	var joke = response.joke;
+	var catDiv = $("<div>")
+	var category = response.category;
+	giphyJoke(category);
+>>>>>>> main
 
 	//if statement to determine which type of joke it is
 	if(jokeType === "twopart") {
@@ -45,15 +55,32 @@ $(".category").on("click", function() {
 	}
 })
 
+<<<<<<< HEAD
+=======
+//home button is clicked, resets page and array so user can go through process again
+$("#home-button").on("click", function() {
+	$(".categories").show()
+	$("#search-result").empty()
+	$("#joke-result").empty()
+	$("#punchline-result").empty()
+	$("#gif-result").attr("src", "");
+	category.length = 0
+	console.log(category);
+})
 
-// * IN PROGRESS
+//function that hides button categories
+function hideCategories() {
+	$(".categories").hide()
+}
+>>>>>>> main
+
+// declaring function giphyCarousel
 function giphyCarousel() {
     
     // GIPHY API key (Luke's)
     var APIKey = "8eGmlbOaPfd5YDK197y9hhIn3Bj0M5A3";
 
-    // *** set this variable equal to random trending gifs
-
+	// getting the 20 top trending GIFs from GIPHY API
     var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=" + APIKey + "&limit=20";
 
     $.ajax({
@@ -61,13 +88,14 @@ function giphyCarousel() {
         method: "GET"
     }).then(function(response) {
 
-		console.log(response);
-
+		// declaring local variables x and y, and setting their values to be random integers
 		var x = Math.floor(Math.random() * 20);
 		var y = Math.floor(Math.random() * 20);
 		
+		// call checkSecondRandom function
 		checkSecondRandom();
 		
+		// use if statement to ensure x and y are different integers
 		function checkSecondRandom() {
 			if (x === y) {
 				y = Math.floor(Math.random() * 20);
@@ -75,24 +103,30 @@ function giphyCarousel() {
 			}
 		}
 
+		// declaring local vars & setting values equal to the API result that corresponds with random ints X and Y
 		var firstRandom = response.data[x];
 		var secondRandom = response.data[y];
 
-        var firstGif = firstRandom.images.original.url;
-        var secondGif = secondRandom.images.original.url;
+		// declaring local vars and setting value equal to the URL of the random GIFs
+        var firstGif = firstRandom.images.fixed_height.url;
+		var secondGif = secondRandom.images.fixed_height.url;
+		
+		// dynamically setting the img src of our two carousel GIFs to the URLs of our API results
+		$("#first-carousel-gif").attr("src", firstGif);
+		$("#second-carousel-gif").attr("src", secondGif);
 	
-
     })
 }
 
-
-function giphyJoke(){
+// declaring function giphyJoke that accepts one argument, which the function will call "input"
+// "input" will be passed from the function above, and its value will be the category of the joke the user is given. This way the GIF our function generates will relate to the joke.
+function giphyJoke(input){
 
     // GIPHY API key (Luke's)
     var APIKey = "8eGmlbOaPfd5YDK197y9hhIn3Bj0M5A3";
 
-    // *** set this variable equal to category of joke shown to user
-    var input = "car";
+	// using GIPHY API's search endpoint, with "input" (user joke category) as our search term
+	// we are returning 20 GIF results which we will then randomize so user doesn't keep getting the same GIF if they pick the same joke category
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=" + APIKey + "&limit=20";
 
     $.ajax({
@@ -100,23 +134,21 @@ function giphyJoke(){
         method: "GET"
     }).then(function(response) {
 
+		// declaring local variable i with value of random int between 0 and 19
         var i = Math.floor(Math.random() * 20);
 
+		// using i to select a random result from our array of API results
         var randomResult = response.data[i];
 
-        var jokeGif = randomResult.images.original.url;
+		// declaring local variable whose value is the URL of our selected GIF
+        var jokeGif = randomResult.images.fixed_height.url;
 
+		// dynamically setting img src of #gif-result to the URL of our selected GIF from the API
         $("#gif-result").attr("src", jokeGif);
 
-    })
-
-
-
+	})
+	
 }
 
-
-
-
+// calling giphyCarousel function
 giphyCarousel();
-
-giphyJoke();
