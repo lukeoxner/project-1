@@ -5,8 +5,7 @@ var category = []
 $("#submitBtn").on("click", function() {
 
 	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
-var formatCategory = category.join(",")
-console.log(formatCategory);
+var formatCategory = category.join(",");
 
 var queryURL = "https://v2.jokeapi.dev/joke/" + formatCategory + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
 
@@ -14,42 +13,35 @@ $.ajax({
 	url: queryURL,
 	method: "GET"
 }).then(function(response) {
-	console.log(response);
 
 	//make variables for items that will be needed
-	var jokeType = response.type
-	
-	var setup = response.setup
-	
-	var delivery = response.delivery
-	
-	var joke = response.joke
+	var jokeType = response.type;
+	var setup = response.setup;
+	var delivery = response.delivery;
+	var joke = response.joke;
 
 	//add if statement to determine if it is a two part joke or a one part
 	if(jokeType === "twopart") {
-		$("#joke-result").text(setup)
-		$("#punchline-result").text(delivery)
+		$("#joke-result").text(setup);
+		$("#punchline-result").text(delivery);
 	} else {
-		$("#joke-result").text(joke)
+		$("#joke-result").text(joke);
 	}
 
-	
 })
 
 })
 
 //function that pushes user selection into array and removes it if they click on it again.
 $(".category").on("click", function() {
-	var userCategory = this.textContent
+	var userCategory = this.textContent;
 	if(category.includes(userCategory)) { 
-		var indexCat = category.indexOf(userCategory)
-		category.splice(indexCat, 1) 
+		var indexCat = category.indexOf(userCategory);
+		category.splice(indexCat, 1); 
 	} else {
-		category.push(this.textContent)
+		category.push(this.textContent);
 	}
-	console.log(category);
 })
-
 
 // * IN PROGRESS
 // function giphyCarousel() {
