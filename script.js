@@ -4,7 +4,8 @@ var category = []
 var jokeID = []
 
 $("#submitBtn").on("click", function() {
-
+	
+$("#search-result").text(category)
 	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
 var formatCategory = category.join(",")
 
@@ -14,7 +15,6 @@ $.ajax({
 	url: queryURL,
 	method: "GET"
 }).then(function(response) {
-	console.log(response);
 
 	//make variables for items that will be needed
 	var jokeType = response.type;
