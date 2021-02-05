@@ -32,7 +32,7 @@ $.ajax({
 	if(jokeType === "twopart") {
 		$("#joke-result").text(setup)
 		$("#punchline-result").text(delivery)
-		localStorage.setItem(response.id, JSON.stringify(setup + delivery))
+		localStorage.setItem(response.id, JSON.stringify(setup + " " + delivery))
 		jokeID.push(response.id)
 	} else {
 		$("#joke-result").text(joke)
