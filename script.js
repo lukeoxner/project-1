@@ -1,11 +1,13 @@
 
 
 var category = []
+var jokeID = []
 
 $("#submitBtn").on("click", function() {
-
+	
+$("#search-result").text(category)
 	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
-var formatCategory = category.join(",");
+var formatCategory = category.join(",")
 
 var queryURL = "https://v2.jokeapi.dev/joke/" + formatCategory + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
 
@@ -23,32 +25,52 @@ $.ajax({
 	var category = response.category;
 	giphyJoke(category);
 
-	console.log(jokeType);
-
-	//add if statement to determine if it is a two part joke or a one part
+	//if statement to determine which type of joke it is then applies the type to the correct div and stores it into local storage
 	if(jokeType === "twopart") {
-		$("#joke-result").text(setup);
-		$("#punchline-result").text(delivery);
+		$("#joke-result").text(setup)
+		$("#punchline-result").text(delivery)
+		localStorage.setItem(response.id, JSON.stringify(setup + delivery))
+		jokeID.push(response.id)
 	} else {
-		$("#joke-result").text(joke);
+		$("#joke-result").text(joke)
+		localStorage.setItem(response.id, JSON.stringify(joke))
+		jokeID.push(response.id)
 	}
-	
-	//puts the category array into a created div and displays it under searched for h2
-	catDiv.text(category)
-	$("#search-result").append(catDiv)
-
 	hideCategories()
+
+	getLocale()
 })
+
 })
+
+//functionality of local storage
+function getLocale() {
+	var values = []
+	$("#last-search").empty()
+	keys = Object.keys(localStorage),
+	i = keys.length;
+
+	while ( i-- ) {
+        values.push(localStorage.getItem(keys[i]));
+	}
+
+	for(var index = 0; index < values.length; index++) {
+		var oldJokeDiv = $("<div>")
+		oldJokeDiv.text(values[index])
+		$("#last-search").prepend(oldJokeDiv)
+	}
+}
+
+
 
 //function that pushes user selection into array and removes it if they click on it again.
 $(".category").on("click", function() {
-	var userCategory = this.textContent;
+	var userCategory = this.textContent
 	if(category.includes(userCategory)) { 
-		var indexCat = category.indexOf(userCategory);
-		category.splice(indexCat, 1); 
+		var indexCat = category.indexOf(userCategory)
+		category.splice(indexCat, 1) 
 	} else {
-		category.push(this.textContent);
+		category.push(this.textContent)
 	}
 })
 
@@ -61,6 +83,12 @@ $("#home-button").on("click", function() {
 	$("#gif-result").attr("src", "");
 	category.length = 0
 	console.log(category);
+})
+
+//clears local storage on button click
+$("#reset-button").on("click", function() {
+	localStorage.clear()
+	$("#last-search").empty()
 })
 
 //function that hides button categories
