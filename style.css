@@ -1,76 +1,76 @@
 body {
-  background: url(Upside-Down_Face.png) repeat;
-  background-size: 150px 150px;
-  background-color: rgb(252, 229, 129);
+	background: url(Upside-Down_Face.png) repeat;
+	background-size: 150px 150px;
+	background-color: rgb(252, 229, 129);
 }
 
 section {
-  margin: auto;
-  width: 80%;
-  height: 100%;
-  padding: 20px;
-  background-color: rgb(253, 240, 180);
-  border-color: rgb(97, 61, 19);
-  display: block;
+	margin: auto;
+	width: 80%;
+	height: auto;
+	padding: 20px;
+	background-color: rgb(253, 240, 180);
+	border-color: rgb(97, 61, 19);
+	display: block;
 }
 
 nav {
-  background-color: black;
-  height: 100px;
+	background-color: black;
+	height: 100px;
 }
 
 .bar {
-  display: block;
-  margin: auto;
-  float: none;
+	display: block;
+	margin: auto;
+	float: none;
 }
 
 p {
-  font-family: "Changa One", cursive;
-  font-size: 60px;
-  color: rgb(253, 204, 67);
-  float: none;
-  display: inline;
-  padding-left: 120px;
+	font-family: 'Changa One', cursive;
+	font-size: 60px;
+	color: rgb(253, 204, 67);
+	float: none;
+	display: inline;
+	padding-left: 120px;
 }
 
 #logo-l {
-  width: 50px;
-  float: left;
-  margin: 20px;
+	width: 50px;
+	float: left;
+	margin: 20px;
 }
 
 #logo-r {
-  width: 50px;
-  float: right;
-  margin: 20px;
+	width: 50px;
+	float: right;
+	margin: 20px;
 }
 
 #move {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3%;
-  width: 40%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	width: 40%;
 }
 #button {
-  margin-left: 25%;
+	margin-left: 25%;
 }
 #gifDesign {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
 }
 #last-search {
-  margin-top: 2%;
-  margin-left: 40%;
+	margin-top: 2%;
+	margin-left: 40%;
 }
 .theJoke {
-  margin-left: 40%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+	margin-left: 40%;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 .restart {
-  margin-left: 40%;
+	margin-left: 40%;
 }
