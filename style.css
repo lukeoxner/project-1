@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
 	background: url(Upside-Down_Face.png) repeat;
 	background-size: 150px 150px;
@@ -5,13 +8,12 @@ body {
 }
 
 section {
-	margin: auto;
-	width: 80%;
-	height: 100%;
-	padding: 20px;
-	background-color: rgb(253, 240, 180);
-	border-color: rgb(97, 61, 19);
-	display: block;
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  background-color: rgb(253, 204, 67);
+  display: block;
 }
 
 nav {
@@ -20,18 +22,33 @@ nav {
 }
 
 .bar {
-	display: block;
-	margin: auto;
-	float: none;
+  display: block;
+  margin: auto;
+  float: none;
+  width: 70%;
+  padding-top: 10px;
 }
 
 p {
-	font-family: 'Changa One', cursive;
-	font-size: 60px;
-	color: rgb(253, 204, 67);
-	float: none;
-	display: inline;
-	padding-left: 120px;
+  font-family: "Changa One", cursive;
+  font-size: 50px;
+  color: rgb(243, 180, 8);
+  float: none;
+  display: inline;
+  padding-left: 120px;
+}
+
+h1 {
+  font-family: "Changa One", cursive;
+  text-align: center;
+  padding-bottom: 5px;
+  color: rgb(9, 11, 122);
+}
+
+h2 {
+  text-align: center;
+  font-family: "Changa One", cursive;
+  color: rgb(40, 43, 219);
 }
 
 #logo-l {
@@ -47,30 +64,63 @@ p {
 }
 
 #move {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 3%;
-	width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  height: 25%;
 }
 #button {
-	margin-left: 25%;
+  align-content: center;
+  padding-right: 50px;
+  margin: auto;
 }
 #gifDesign {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
+.gif-result{
+    height:25%;
+}
+
 #last-search {
-	margin-top: 2%;
-	margin-left: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
+.categories {
+  margin: auto;
+  width:70%;
+}
+
 .theJoke {
-	margin-left: 40%;
-	margin-top: 2%;
-	margin-bottom: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 .restart {
-	margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+nav  {
+    display: none;
+}
+}
+
+@media screen and (max-width: 800px) {
+p {
+    font-family: "Changa One", cursive;
+    font-size: 30px;
+    color: rgb(243, 180, 8);
+    float: none;
+    display: inline;
+    text-align: center;
+    text
+  }
 }
