@@ -25,7 +25,7 @@ $.ajax({
 	var category = response.category;
 	giphyJoke(category);
 
-	//if statement to determine which type of joke it is
+	//if statement to determine which type of joke it is then applies the type to the correct div and stores it into local storage
 	if(jokeType === "twopart") {
 		$("#joke-result").text(setup)
 		$("#punchline-result").text(delivery)
@@ -57,7 +57,7 @@ function getLocale() {
 	for(var index = 0; index < values.length; index++) {
 		var oldJokeDiv = $("<div>")
 		oldJokeDiv.text(values[index])
-		$("#last-search").append(oldJokeDiv)
+		$("#last-search").prepend(oldJokeDiv)
 	}
 }
 
