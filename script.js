@@ -56,7 +56,7 @@ function getLocale() {
 
 	//function that pushes keys values in locale storage into the array of values until there are none left to push
 	while ( i-- ) {
-        values.push(localStorage.getItem(keys[i]));
+        values.push(JSON.parse(localStorage.getItem(keys[i])));
 	}
 
 	//for loop that applies the newly created array of values from the while loop into divs and attaches them to last-search div
@@ -75,7 +75,7 @@ $(".category").on("click", function() {
 	if(category.includes(userCategory)) { 
 		var indexCat = category.indexOf(userCategory)
 		category.splice(indexCat, 1)
-		$(this).css("color", "gray") 
+		$(this).css("color", "white") 
 	} else {
 		category.push(this.textContent)
 		$(this).css("color", "blue")
@@ -88,7 +88,7 @@ $("#home-button").on("click", function() {
 	$("#search-result").empty()
 	$("#joke-result").empty()
 	$("#punchline-result").empty()
-	$(".category").css("color", "gray")
+	$(".category").css("color", "white")
 	$("#gif-result").attr("src", "");
 	category.length = 0
 	console.log(category);
