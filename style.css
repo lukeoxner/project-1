@@ -81,8 +81,8 @@ h2 {
   margin-right: auto;
   width: 50%;
 }
-.gif-result{
-    height:25%;
+.gif-result {
+  height: 25%;
 }
 
 #last-search {
@@ -92,7 +92,7 @@ h2 {
 }
 .categories {
   margin: auto;
-  width:70%;
+  width: 70%;
 }
 
 .theJoke {
@@ -102,25 +102,33 @@ h2 {
   width: 50%;
 }
 .restart {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-@media screen and (max-width: 1200px) {
-nav  {
-    display: none;
-}
-}
-
-@media screen and (max-width: 800px) {
-p {
+@media screen and (max-width: 1500px) {
+  p {
     font-family: "Changa One", cursive;
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(243, 180, 8);
     float: none;
     display: inline;
     text-align: center;
-    text
+    padding-top: 20px;
+  }
+
+  #logo-l,
+  #logo-r {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    display: none;
+  }
+  .gif-result {
+    display: inline;
   }
 }
