@@ -1,27 +1,30 @@
 
-
+//Global variables
 var category = []
 var jokeID = []
 
+//event listener for submit button that starts off ajax call and other various functionality
 $("#submitBtn").on("click", function() {
-	
+
+//applies current category array to search result header
 $("#search-result").text(category)
-	//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
+	
+//this variable makes it so the array has no spaces and is seperated by a comma for the queryURL format
 var formatCategory = category.join(",")
 
 var queryURL = "https://v2.jokeapi.dev/joke/" + formatCategory + "?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
 
+//ajax call to jokes API
 $.ajax({
 	url: queryURL,
 	method: "GET"
 }).then(function(response) {
 
-	//make variables for items that will be needed
+	//variables created from response data
 	var jokeType = response.type;
 	var setup = response.setup;
 	var delivery = response.delivery;
 	var joke = response.joke;
-	var catDiv = $("<div>")
 	var category = response.category;
 	giphyJoke(category);
 
@@ -29,31 +32,34 @@ $.ajax({
 	if(jokeType === "twopart") {
 		$("#joke-result").text(setup)
 		$("#punchline-result").text(delivery)
-		localStorage.setItem(response.id, JSON.stringify(setup + delivery))
+		localStorage.setItem(response.id, JSON.stringify(setup + " " + delivery))
 		jokeID.push(response.id)
 	} else {
 		$("#joke-result").text(joke)
 		localStorage.setItem(response.id, JSON.stringify(joke))
 		jokeID.push(response.id)
 	}
+	//runs function for hideCategories
 	hideCategories()
-
+	//runs function for getLocale
 	getLocale()
 })
 
 })
 
-//functionality of local storage
+//functionality of getting the info from local storage
 function getLocale() {
 	var values = []
 	$("#last-search").empty()
 	keys = Object.keys(localStorage),
 	i = keys.length;
 
+	//function that pushes keys values in locale storage into the array of values until there are none left to push
 	while ( i-- ) {
-        values.push(localStorage.getItem(keys[i]));
+        values.push(JSON.parse(localStorage.getItem(keys[i])));
 	}
 
+	//for loop that applies the newly created array of values from the while loop into divs and attaches them to last-search div
 	for(var index = 0; index < values.length; index++) {
 		var oldJokeDiv = $("<div>")
 		oldJokeDiv.text(values[index])
@@ -68,9 +74,11 @@ $(".category").on("click", function() {
 	var userCategory = this.textContent
 	if(category.includes(userCategory)) { 
 		var indexCat = category.indexOf(userCategory)
-		category.splice(indexCat, 1) 
+		category.splice(indexCat, 1)
+		$(this).css("color", "white") 
 	} else {
 		category.push(this.textContent)
+		$(this).css("color", "blue")
 	}
 })
 
@@ -80,6 +88,7 @@ $("#home-button").on("click", function() {
 	$("#search-result").empty()
 	$("#joke-result").empty()
 	$("#punchline-result").empty()
+	$(".category").css("color", "white")
 	$("#gif-result").attr("src", "");
 	category.length = 0
 	console.log(category);
