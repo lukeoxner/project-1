@@ -78,7 +78,7 @@ $(".category").on("click", function() {
 		$(this).css("color", "gray") 
 	} else {
 		category.push(this.textContent)
-		$(this).css("color", "red")
+		$(this).css("color", "blue")
 	}
 })
 
