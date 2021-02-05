@@ -85,6 +85,12 @@ $("#home-button").on("click", function() {
 	console.log(category);
 })
 
+//clears local storage on button click
+$("#reset-button").on("click", function() {
+	localStorage.clear()
+	$("#last-search").empty()
+})
+
 //function that hides button categories
 function hideCategories() {
 	$(".categories").hide()
