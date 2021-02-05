@@ -172,7 +172,7 @@ function giphyJoke(input){
         var randomResult = response.data[i];
 
 		// declaring local variable whose value is the URL of our selected GIF
-        var jokeGif = randomResult.images.fixed_height.url;
+        var jokeGif = randomResult.images.fixed_width.url;
 
 		// dynamically setting img src of #gif-result to the URL of our selected GIF from the API
         $("#gif-result").attr("src", jokeGif);
