@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 body {
-  background: url(Upside-Down_Face.png) repeat;
-  background-size: 150px 150px;
-  background-color: rgb(252, 229, 129);
+	background: url(Upside-Down_Face.png) repeat;
+	background-size: 150px 150px;
+	background-color: rgb(252, 229, 129);
 }
 
 section {
@@ -17,8 +17,8 @@ section {
 }
 
 nav {
-  background-color: black;
-  height: 100px;
+	background-color: black;
+	height: 100px;
 }
 
 .bar {
@@ -52,15 +52,15 @@ h2 {
 }
 
 #logo-l {
-  width: 50px;
-  float: left;
-  margin: 20px;
+	width: 50px;
+	float: left;
+	margin: 20px;
 }
 
 #logo-r {
-  width: 50px;
-  float: right;
-  margin: 20px;
+	width: 50px;
+	float: right;
+	margin: 20px;
 }
 
 #move {
